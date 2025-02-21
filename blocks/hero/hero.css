@@ -1,19 +1,79 @@
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
+  margin: 0;
+}
+
+main > .section.hero-container {
+  padding-top: 0;
 }
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 0 2rem 0;
+  min-height: min(calc(450px + 6vmin), 60vh);
+
+  clip-path: ellipse(200% 65% at 50% 30%);
+}
+
+.hero picture {
+  position: relative;
+}
+
+.hero picture::after {
+  background:
+    linear-gradient(to right, rgba(var(--dark-accent-color-rgb), 0.25), rgba(var(--dark-accent-color-rgb), 0.40));
+  background-position: center right;
+  background-size: cover;
+  background-blend-mode:
+    normal,
+    normal;
+
+  display: block;
+  content: ' asdf';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+  font-size: 1px;
+  top: 0;
+}
+
+.hero h2 {
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  letter-spacing: 0.002em;
+  color: #fff;
+  font-weight: normal;
+  background-color: rgb(var(--dark-accent-color-rgb));
+  padding: 0.5rem 1rem;
+  margin-top: 0;
+  display: inline-block;
+}
+
+.hero h2 a {
+  color: unset;
+  font: unset;
+  text-decoration: underline;
+}
+
+.hero h2 a:hover {
+  color: var(--color-neutral-400);
 }
 
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  font-weight: bold;
+  color: rgb(var(--dark-accent-color-rgb));
+  font-size: clamp(2rem, 3vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: 0.003em;
+  background-color: var(--color-core-yellow2);
+  display: inline-block;
+  padding: 1rem 2rem 1rem 1rem;
+  margin-bottom: 0;
 }
 
 .hero picture {
@@ -30,8 +90,18 @@
   height: 100%;
 }
 
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
+.inside {
+  display: flex;
+  justify-content: right;
+  width: 50%;
+  min-width: min(500px, 75vw);
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 3rem;
+
+  background: linear-gradient(to right, rgba(var(--dark-accent-color-rgb), 0.65), rgba(var(--dark-accent-color-rgb), 0.50));
+}
+
+.content {
+  max-width: 650px;
 }

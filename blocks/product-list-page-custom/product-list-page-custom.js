@@ -308,6 +308,7 @@ class ProductListPage extends Component {
     super();
 
     this.facetMenuRef = createRef();
+    this.facetButtonRef = createRef();
     this.sortMenuRef = createRef();
     this.secondLastProduct = createRef();
 
@@ -536,28 +537,28 @@ class ProductListPage extends Component {
     const { type = 'category' } = props;
 
     return html`<${Fragment}>
-    <${FacetList} 
-      facets=${state.facets}
-      filters=${state.filters}
-      facetMenuRef=${this.facetMenuRef}
-      onFilterChange=${this.handleFilterChange.bind(this)}
-      loading=${state.loading} />
     <div class="products">
       <div class="title">
-        <h1>${state.category.name}</h1>
-        ${!state.loading && html`<span>(${state.products.total} ${state.products.total === 1 ? 'Product' : 'Products'})</span>`}
+        <div class="control-container">
+          <button disabled=${state.loading}
+                  id="toggle-filters"
+                  onClick=${(e) => this.facetMenuRef.current.classList.toggle('active')}>Filters</button>
+          ${!state.loading && html`<div>(${state.products.total} ${state.products.total === 1 ? 'Product' : 'Products'})</div>`}
+        </div>
         <${Sort}
-          disabled=${state.loading}
-          currentSort=${state.sort}
-          sortDirection=${state.sortDirection}
-          type=${type}
-          onSort=${this.handleSortChange.bind(this)}
-          sortMenuRef=${this.sortMenuRef} />
+            disabled=${state.loading}
+            currentSort=${state.sort}
+            sortDirection=${state.sortDirection}
+            type=${type}
+            onSort=${this.handleSortChange.bind(this)}
+            sortMenuRef=${this.sortMenuRef} />
       </div>
-      <div class="mobile-menu">
-        <button disabled=${state.loading} id="toggle-filters" onClick=${() => this.facetMenuRef.current.classList.toggle('active')}>Filters</button>
-        <button disabled=${state.loading} id="toggle-sortby" onClick=${() => this.sortMenuRef.current.classList.toggle('active')}>Sort By</button>
-      </div>
+      <${FacetList} 
+        facets=${state.facets}
+        filters=${state.filters}
+        facetMenuRef=${this.facetMenuRef}
+        onFilterChange=${this.handleFilterChange.bind(this)}
+        loading=${state.loading} />
       <${ProductList}
         products=${state.products}
         secondLastProduct=${this.secondLastProduct}

@@ -612,6 +612,28 @@ async function loadBlock(block) {
  * Decorates a block.
  * @param {Element} block The block element
  */
+function decorateHero(block) {
+  const parentEl = block.querySelector('.hero.block');
+  const imageElement = block.querySelector('picture');
+  const notImageElements = block.querySelectorAll('h1,h2,h3')
+
+  parentEl.appendChild(imageElement);
+  const blockEl = document.createElement('div');
+  blockEl.classList.add('inside');
+
+  const contentEl = document.createElement('div');
+  contentEl.classList.add('content');
+  blockEl.appendChild(contentEl);
+
+  notImageElements.forEach(e => contentEl.appendChild(e));
+
+  parentEl.appendChild(blockEl);
+}
+
+/**
+ * Decorates a block.
+ * @param {Element} block The block element
+ */
 function decorateBlock(block) {
   const shortBlockName = block.classList[0];
   if (shortBlockName) {
@@ -632,6 +654,7 @@ function decorateBlock(block) {
  */
 function decorateBlocks(main) {
   main.querySelectorAll('div.section > div > div').forEach(decorateBlock);
+  main.querySelectorAll('.hero-wrapper').forEach(decorateHero);
 }
 
 /**

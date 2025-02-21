@@ -17,7 +17,11 @@ export default async function decorate(block) {
     }
 
     if (type === 'category') {
-      const plpBlock = document.querySelector('.block.product-list-page');
+      let plpBlock = document.querySelector('.block.product-list-page');
+      if (!plpBlock) {
+        plpBlock = document.querySelector('.block.product-list-page-custom');
+      }
+
       if (!plpBlock) {
         throw new Error('No product list page block found');
       }

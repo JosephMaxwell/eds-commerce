@@ -8,16 +8,23 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 .product-list-page-custom {
   display: flex !important;
   gap: 2rem;
+  flex-direction: column;
 }
 
 .product-list-page-custom .facets {
   display: none;
-  position: fixed;
   inset: var(--nav-height) 0 48px 0;
   z-index: 2;
   overflow: auto;
-  background: var(--background-color);
+  background: var(--color-neutral-300);
+  border-radius: 2rem;
   box-sizing: content-box;
+  padding: 3rem;
+}
+
+.product-list-page-custom .facets .facet-title {
+  display: flex;
+  justify-content: space-between;
 }
 
 .product-list-page-custom .facets.active {
@@ -25,7 +32,9 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 }
 
 .product-list-page-custom .facets h2 {
-  display: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 0;
 }
 
 .product-list-page-custom .facets .close,
@@ -308,6 +317,21 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 
 }
 
+.product-list-page-custom .products .title {
+  display: flex;
+  width: 100%;
+}
+
+.product-list-page-custom .products .control-container {
+  display: flex;
+  gap: 1rem;
+  align-content: center;
+}
+
+.product-list-page-custom .products .control-container > div {
+  align-content: center;
+}
+
 .product-list-page-custom .products .title h1 {
   margin: 0;
   padding: 0;
@@ -330,8 +354,9 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
   display: none;
 }
 
-.product-list-page-custom .products .title .sort > button {
-  width: 100%;
+.product-list-page-custom .products .title .sort > button,
+.product-list-page-custom .products .title .control-container > button{
+  min-width: 125px;
   border: var(--shape-border-width-3) solid currentcolor;
   background: var(--color-neutral-50);
   color: var(--color-brand-700);
@@ -424,13 +449,13 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 
 .product-list-page-custom .products .list > ol > li .name a {
   font: var(--type-headline-2-strong-font);
+  font-weight: bold;
   letter-spacing: var(--type-headline-2-strong-letter-spacing);
   display: inline-block;
   line-height: 1.3;
   text-decoration: none;
   text-overflow: ellipsis;
   overflow: hidden;
-  height: 6.1rem;
 }
 
 .product-list-page-custom .products .list > ol > li .name a:hover {
@@ -440,6 +465,7 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
 .product-list-page-custom .products .list > ol > li .price {
   font: var(--type-headline-2-strong-font);
   letter-spacing: var(--type-headline-2-strong-letter-spacing);
+  font-size: 1.6rem;
   height: 2.8rem;
   display: flex;
   align-items: baseline;
@@ -540,37 +566,37 @@ main .section.product-list-page-custom-container > .default-content-wrapper h1:f
     max-width: 1920px;
   }
 
-  .product-list-page-custom .facets {
-    display: block;
-    flex: 25;
-    max-width: 430px;
-    background: var(--color-neutral-500);
-    padding: 20px 30px;
-    position: unset;
-    z-index: unset;
-    overflow: unset;
-  }
+  /*.product-list-page-custom .facets {*/
+  /*  display: block;*/
+  /*  flex: 25;*/
+  /*  max-width: 430px;*/
+  /*  background: var(--color-neutral-500);*/
+  /*  padding: 20px 30px;*/
+  /*  position: unset;*/
+  /*  z-index: unset;*/
+  /*  overflow: unset;*/
+  /*}*/
 
-  .product-list-page-custom .facets .close {
-    display: none;
-  }
+  /*.product-list-page-custom .facets .close {*/
+  /*  display: none;*/
+  /*}*/
 
-  .product-list-page-custom .facets h2 {
-    display: block;
-    margin: 0;
-    padding: 20px 5px;
-  }
+  /*.product-list-page-custom .facets h2 {*/
+  /*  display: block;*/
+  /*  margin: 0;*/
+  /*  padding: 20px 5px;*/
+  /*}*/
 
-  .product-list-page-custom .facets .facet-list .facet {
-    padding: 20px 0;
-  }
+  /*.product-list-page-custom .facets .facet-list .facet {*/
+  /*  padding: 20px 0;*/
+  /*}*/
 
   .product-list-page-custom .products {
     gap: 10px;
   }
 
   .product-list-page-custom .products .mobile-menu {
-    display: none;
+    /*display: none;*/
   }
 
   .product-list-page-custom .products .list > ol {

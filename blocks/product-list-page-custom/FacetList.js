@@ -202,8 +202,10 @@ export default class FacetList extends Component {
 
     return html`
       <div class="facets ${loading ? 'shimmer' : ''}" ref=${facetMenuRef}>
-          <h2>Filters</h2>
+        <div class="facet-title">  
+        <h2>Filters</h2>
           <button class="close" onClick=${() => facetMenuRef.current.classList.toggle('active')}>Close</button>
+        </div>
           <div class="facet-list">
             ${facets
     .filter((facet) => facet.buckets.length > 0)

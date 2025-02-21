@@ -1,0 +1,13 @@
+.call-to-action a {
+  min-width: 125px;
+  border: var(--shape-border-width-3) solid currentcolor;
+  background: var(--color-neutral-50);
+  color: var(--color-brand-700);
+  padding: 16px;
+  margin: 0;
+  transition: background-color 100ms ease-in-out;
+}
+
+.call-to-action a:hover {
+  background: var(--color-neutral-100);
+}

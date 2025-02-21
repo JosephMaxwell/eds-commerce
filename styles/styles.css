@@ -15,6 +15,19 @@
 /* stylelint-disable no-empty-source */
 :root, .dropin-design {
   /* Adobe Commerce Dropin design tokens */
+
+  --color-purple1: #2e066b;
+  --color-core: #0f0436;
+  --color-core-gray1: #332e4d;
+  --color-core-gray2: #4e4b70;
+  --color-core-gray3: #827ea0;
+  --color-core-gray5: #f0edf2;
+  --color-core-yellow2: #fad85f;
+  --color-dark-navy-rgb: 51, 46, 77;
+  --color-dark-purple-rgb: 79, 2, 155;
+
+
+
   --color-brand-300: #6d6d6d;
   --color-brand-500: #454545;
   --color-brand-600: #383838;
@@ -90,8 +103,8 @@
   --spacing-huge: 120px;
   --spacing-xhuge: 144px;
   --spacing-xxhuge: 192px;
-  --type-base-font-family: adobe-clean, roboto, roboto-fallback;
-  --type-condensed-font-family: adobe-clean-condensed, roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --type-base-font-family: "Aeonik", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --type-condensed-font-family: "Aeonik", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --type-display-1-font: normal normal 300 6.0rem/7.2rem var(--type-base-font-family);
   --type-display-1-letter-spacing: 0.04em;
   --type-display-2-font: normal normal 300 4.8rem/5.6rem
@@ -141,38 +154,66 @@
   --type-details-overline-letter-spacing: 0.16em;
 
   /* Additional tokens */
-  --type-fixed-font-family: adobe-clean, 'Roboto Mono', menlo, consolas, 'Liberation Mono',
-    monospace;
+  --type-fixed-font-family: "Aeonik", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --background-color: var(--color-neutral-50);
+  --dark-accent-color-rgb: var(--color-dark-navy-rgb);
+  --background-header-color: var(--color-core-gray1);
+  --background-header-font-color: var(--color-core-gray5);
   --nav-height: 6.4rem;
 }
 
-/* fallback fonts */
 @font-face {
-    font-family: adobe-clean;
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('../fonts/AdobeClean-Light.otf') format('opentype');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'Aeonik';
+  src: url('../fonts/aeonik/Aeonik-Regular.woff2') format('woff2'),
+  url('../fonts/aeonik/Aeonik-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: adobe-clean;
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('../fonts/AdobeClean-Regular.otf') format('opentype');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'Aeonik';
+  src: url('../fonts/aeonik/Aeonik-RegularItalic.woff2') format('woff2'),
+  url('../fonts/aeonik/Aeonik-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: adobe-clean-condensed;
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('../fonts/AdobeClean-BoldCond.otf') format('opentype');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'Aeonik';
+  src: url('../fonts/aeonik/Aeonik-Medium.woff2') format('woff2'),
+  url('../fonts/aeonik/Aeonik-Medium.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('../fonts/aeonik/Aeonik-MediumItalic.woff2') format('woff2'),
+  url('../fonts/aeonik/Aeonik-MediumItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Recoleta';
+  src: url('../fonts/recoleta/Recoleta-Regular.woff2') format('woff2'),
+  url('../fonts/recoleta/Recoleta-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Recoleta';
+  src: url('../fonts/recoleta/Recoleta-Bold.woff2') format('woff2'),
+  url('../fonts/recoleta/Recoleta-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 html, body {
@@ -425,6 +466,12 @@ main > .section {
 
 main > .section > div {
   max-width: 1200px;
+  margin: auto;
+  padding: 0 var(--spacing-medium);
+}
+
+main > .section > .default-content-wrapper {
+  max-width: 750px;
   margin: auto;
   padding: 0 var(--spacing-medium);
 }

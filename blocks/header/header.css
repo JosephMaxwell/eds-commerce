@@ -135,11 +135,21 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 }
 
 /* brand */
+header nav .nav-brand {
+  flex-basis: 156px;
+}
+
 header nav .nav-brand a {
   grid-area: brand;
   flex-basis: 128px;
   font: var(--type-headline-1-font);
   letter-spacing: var(--type-headline-1-letter-spacing);
+  font-size: 0;
+  background-image: url(../../icons/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  display: block;
 }
 
 header nav .nav-brand img {
