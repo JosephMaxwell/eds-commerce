@@ -1,5 +1,7 @@
 mountpoints:
-  /: https://drive.google.com/drive/u/0/folders/1LRuSQi0jypaID3sP50IdupSYIQwn1PUS
+  /:
+    url: https://content.da.live/JosephMaxwell/eds-commerce/
+    type: markup
 
 folders:
   /products/: /products/default
